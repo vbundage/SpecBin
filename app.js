@@ -25,8 +25,6 @@ app.get('/r/:binId', async (req, res) => {
   const binExists = await cache.binExists(binId);
 
   if (req.query.hasOwnProperty('inspect') && binExists) {
-    // TODO: if bin is empty render informational page
-    // TODO: if bin has requests render request information
     const info = await cache.getCacheById(binId);
     res.render('requests', {
       requestInfo: JSON.parse(info),
