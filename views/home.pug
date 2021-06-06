@@ -1,0 +1,8 @@
+extends layout.pug
+
+block content
+  div(id="home-content")
+    h2 SpecBin
+    p SpecBin is a RequestBin clone created using JavaScript and Redis.
+    form(action="/new" method="post")
+      button(type="submit" id="createBtn") Create a bin

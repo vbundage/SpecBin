@@ -1,0 +1,40 @@
+extends layout.pug
+
+block content
+  div
+    ul(id="requests-list")
+      - let count = 1;
+        each req in requestInfo
+          h2 Request #{count}
+          - count++
+          p
+            b #{req.method} 
+            span #{path}
+          p
+            b Host
+            span : #{req.headers.host}
+          p 
+            b Time
+            span : #{req.time}
+          p
+            b Headers:
+            ul(class="headers-list")
+              each val, key in req.headers
+                li
+                  b #{key}: 
+                  span #{val}
+          p
+            b Body
+            span : #{req.body}   
+          br
+        
+        else
+          p No requests. Start sending some to 
+            i #{host}#{path}
+            span  and use 
+            i #{host}#{path}?inspect
+            span  to check them out!
+
+  div(id="request-limit")
+    h3 Limits
+    p Bins last for 48 hours and are limited to 20 requests. Additional requests made will remove the oldest request.
