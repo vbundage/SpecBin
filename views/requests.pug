@@ -25,14 +25,14 @@ block content
                   span #{val}
           p
             b Body
-            span : #{req.body}   
+            span : #{req.body}
           br
         
         else
           p No requests. Start sending some to 
-            i #{host}#{path}
+            i https://#{host}#{path}
             span  and use 
-            i #{host}#{path}?inspect
+            i https://#{host}#{path}?inspect
             span  to check them out!
 
   div(id="request-limit")

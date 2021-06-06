@@ -16,6 +16,10 @@ li {
   word-wrap: break-word;
 }
 
+p {
+  word-wrap: break-word;
+}
+
 #home-content {
   background-color: white;
   margin: 20px 0;
