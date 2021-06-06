@@ -33,7 +33,7 @@ app.get('/r/:binId', async (req, res) => {
     });
   } else if (binExists) {
     await cache.addRequest(binId, req);
-    res.status(200).send(`ip:${req.ip}`);
+    res.status(200).send(`Request added to bin!`);
   } else {
     res.status(404).send('Not found');
   }
